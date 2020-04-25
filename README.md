@@ -15,5 +15,7 @@ Features:
 
 Ban Reason Format: {reasons} {notes} {Moderator Name/Nickname} {duration}
 
+Downloads: See <a href="https://github.com/ShimmyMySherbet/UnturnedBanFormatter/releases/tag/1.0">Releases</a>
+
 <img src="https://i.ibb.co/6Hj0cBP/image.png" width="500">
 <img src="https://i.ibb.co/Lhnxysw/image.png" width="500">
