@@ -1,5 +1,6 @@
 # UnturnedBanFormatter
 A simple Ban command formatter for Unturned I threw together in about an hour.
+### Note: this is a really low-effort project; I'm just putting it here to share it.
 
 This was originally developed to use on Dark Twilight Gaming, but it will work for any server.
 
@@ -14,3 +15,5 @@ Features:
 
 Ban Reason Format: {reasons} {notes} {Moderator Name/Nickname} {duration}
 
+<img src="https://i.ibb.co/6Hj0cBP/image.png" width="500">
+<img src="https://i.ibb.co/Lhnxysw/image.png" width="500">
