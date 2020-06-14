@@ -77,30 +77,30 @@
     End Sub
     Sub LoadDicts()
         CBDict = New Dictionary(Of CheckBox, String) From {
-        {cb_falserp, "False RP"},
-        {cb_advert, "Advertising"},
-        {cb_alt, "Alt Account"},
-        {cb_AtemptServerCrash, "Attemped Crashing"},
-        {cb_Cheat, "Cheating"},
-        {cb_CheatAssisted, "Assisted By Cheater"},
-        {cb_fearrp, "Fear RP"},
+        {cb_falserp, "Yanlış Rol Yapma"},
+        {cb_advert, "reklâm"},
+        {cb_alt, "Alternatif Hesap"},
+        {cb_AtemptServerCrash, "Çökme Girişimi"},
+        {cb_Cheat, "Hile"},
+        {cb_CheatAssisted, "Yardımlı hile"},
+        {cb_fearrp, "Korku Rol Yapma"},
         {cb_glitch, "Glitching"},
-        {cb_GlitchedBase, "Glitched Base"},
+        {cb_GlitchedBase, "hile tabanı"},
         {cb_Greif, "Greifing"},
-        {cb_ignoringstaff, "Ignoring Staff Instructions"},
-        {cb_kos, "KOS"},
-        {cb_LoadAbuse, "Load Abuse"},
-        {cb_minge, "Minge"},
-        {cb_nointent, "No Intent"},
-        {cb_racism, "Racism"},
+        {cb_ignoringstaff, "Personeli Görmezden Gelmek"},
+        {cb_kos, "Görüşte Öldür"},
+        {cb_LoadAbuse, "Kötüye Kullanım Yükü"},
+        {cb_minge, "Sıkıntı"},
+        {cb_nointent, "Niyet Yok"},
+        {cb_racism, "Irkçılık"},
         {cb_ServerCrash, "Crashing Server"},
-        {cb_StaffDis, "Staff Dis"},
-        {cb_staffevade, "Staff Evade"},
-        {cb_staffimpers, "Staff Impersonation"}}
+        {cb_StaffDis, "Çökme Sunucusu"},
+        {cb_staffevade, "Personel Geçişi"},
+        {cb_staffimpers, "Personel Taklitleri"}}
         NoteDict = New Dictionary(Of CheckBox, String) From {
-        {cbChangeName, "Chaneg Name"},
-        {cbReadRules, "Read Rules"},
-        {cb_FalseRaid, "False Raid"}}
+        {cbChangeName, "İsmini değiştir"},
+        {cbReadRules, "Kuralları Oku"},
+        {cb_FalseRaid, "Yanlış Baskın"}}
     End Sub
     Public Function GetReasons() As List(Of String)
         Dim R As New List(Of String)
@@ -129,32 +129,32 @@
     Public ModifierIndex As New Dictionary(Of List(Of String), KeyValuePair(Of String, Double)) From {
         {New List(Of String) From
         {
-            "s", "sec", "seconds", "second"
-        }, New KeyValuePair(Of String, Double)("Second", 1)},
+            "s", "sec", "seconds", "second", "ikinci", "saniye"
+        }, New KeyValuePair(Of String, Double)("ikinci", 1)},
         {New List(Of String) From
         {
-            "m", "min", "minute", "minutes"
-        }, New KeyValuePair(Of String, Double)("Minute", 60)},
+            "m", "min", "minute", "minutes", "dakika"
+        }, New KeyValuePair(Of String, Double)("Dakika", 60)},
         {New List(Of String) From
         {
-            "h", "hour", "ho", "hr", "hours", "hrs", "hs"
-        }, New KeyValuePair(Of String, Double)("Hour", 60 * 60)},
+            "h", "hour", "ho", "hr", "hours", "hrs", "hs", "saat", "saatler"
+        }, New KeyValuePair(Of String, Double)("Saat", 60 * 60)},
         {New List(Of String) From
         {
-            "d", "day", "dy", "ds", "days", "dys"
-        }, New KeyValuePair(Of String, Double)("Day", 60 * 60 * 24)},
+            "d", "day", "dy", "ds", "days", "dys", "gün", "günler"
+        }, New KeyValuePair(Of String, Double)("Gün", 60 * 60 * 24)},
         {New List(Of String) From
         {
-            "w", "week", "weeks", "wks"
-        }, New KeyValuePair(Of String, Double)("Week", 60 * 60 * 24 * 7)},
+            "w", "week", "weeks", "wks", "hafta", "haftalar"
+        }, New KeyValuePair(Of String, Double)("Hafta", 60 * 60 * 24 * 7)},
         {New List(Of String) From
         {
-            "y", "year", "years", "yr", "yrs"
-        }, New KeyValuePair(Of String, Double)("Year", 60 * 60 * 24 * 365)},
+            "y", "year", "years", "yr", "yrs", "yıl", "yıl"
+        }, New KeyValuePair(Of String, Double)("Yıl", 60 * 60 * 24 * 365)},
         {New List(Of String) From
         {
-            "p", "pm", "perm", "inf", "forever", ""
-        }, New KeyValuePair(Of String, Double)("Perm", -1)}
+            "p", "pm", "perm", "inf", "forever", "", "kalıcı"
+        }, New KeyValuePair(Of String, Double)("Perma", -1)}
     }
     Public Function GetBanDuration() As KeyValuePair(Of Long, String)
         Dim intxt As String = txtDuration.Text.Trim(" ")
@@ -189,9 +189,8 @@
         If Seconds = -1 Or Seconds = -2 Then
             resptxt = "Perm"
         Else
-            resptxt = Math.Round(vls.Key, 1) & " " & mdr.Key & (Plurify(vls.Key))
+            resptxt = Math.Round(vls.Key, 1) & " " & mdr.Key
         End If
-        Console.WriteLine("Bylen")
         Return New KeyValuePair(Of Long, String)(Seconds, resptxt)
     End Function
 
@@ -203,39 +202,39 @@
             Case dur >= 60 * 60 * 24 * 365
                 'years
                 Dim yrs As Double = Math.Round(dur / (60 * 60 * 24 * 365), 1)
-                nam = $"{yrs} Year{Plurify(yrs)}"
+                nam = $"{yrs} yıl"
             Case dur >= 60 * 60 * 24 * 7
                 'week
                 Dim yrs As Double = Math.Round(dur / (60 * 60 * 24 * 7), 1)
-                nam = $"{yrs} Week{Plurify(yrs)}"
+                nam = $"{yrs} Hafta"
             Case dur >= 60 * 60 * 24
                 'day
                 Dim yrs As Double = Math.Round(dur / (60 * 60 * 24), 1)
-                nam = $"{yrs} Day{Plurify(yrs)}"
+                nam = $"{yrs} Gün"
             Case dur >= 60 * 60
                 'hour
                 Dim yrs As Double = Math.Round(dur / (60 * 60), 1)
-                nam = $"{yrs} Hour{Plurify(yrs)}"
+                nam = $"{yrs} Saat"
             Case dur >= 60
                 'min
                 Dim yrs As Double = Math.Round(dur / 60, 1)
-                nam = $"{yrs} Minute{Plurify(yrs)}"
+                nam = $"{yrs} Dakika"
             Case Else
                 'sec
                 Dim yrs As Double = Math.Round(dur, 1)
-                nam = $"{yrs} Second{Plurify(yrs)}"
+                nam = $"{yrs} İkinci"
         End Select
         Return New KeyValuePair(Of Long, String)(dur, nam)
     End Function
 
-    Private Function Plurify(dur As Double) As String
-        Console.WriteLine($"Plur>rec::{dur}")
-        If dur > 1 Then
-            Return "s"
-        Else
-            Return ""
-        End If
-    End Function
+    'Private Function Plurify(dur As Double) As String
+    '    Console.WriteLine($"Plur>rec::{dur}")
+    '    If dur > 1 Then
+    '        Return "s"
+    '    Else
+    '        Return ""
+    '    End If
+    'End Function
     Private Function GetVals(str As String) As KeyValuePair(Of Double, String)
         str = str.Trim(" ")
         Dim reb As String = ""
