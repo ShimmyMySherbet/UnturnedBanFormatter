@@ -16,6 +16,9 @@
         If Not SettingsConfig.KeySet("OnTop") Then
             SettingsConfig("OnTop") = False
         End If
+        If Not SettingsConfig.KeySet("Translation") Then
+            SettingsConfig("Translation") = "En"
+        End If
         If SettingsConfig.FileModified Then
             SettingsConfig.Save()
         End If

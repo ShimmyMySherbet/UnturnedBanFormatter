@@ -114,6 +114,8 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SettingsMod.vb" />
+    <Compile Include="Translations\ModifierModel.vb" />
+    <Compile Include="Translations\TranslationModel.vb" />
     <Compile Include="UI.Designer.vb">
       <DependentUpon>UI.vb</DependentUpon>
     </Compile>
@@ -153,6 +155,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Resources\settings.webp" />
+    <None Include="Translastions_Default.English.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\paste.png" />

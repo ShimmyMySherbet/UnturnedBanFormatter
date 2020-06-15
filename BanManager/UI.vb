@@ -1,6 +1,6 @@
 ﻿Public Class UI
-    Dim CBDict As New Dictionary(Of CheckBox, String)
-    Dim NoteDict As New Dictionary(Of CheckBox, String)
+    Public Shared CBDict As New Dictionary(Of CheckBox, String)
+    Public Shared NoteDict As New Dictionary(Of CheckBox, String)
 
     Public Sub UpdateCommand()
 
@@ -51,6 +51,33 @@
     Sub shn() Handles MyBase.Shown
         LoadDicts()
         HookHandlers()
+
+
+        If SettingsConfig("Translation").ToLower() = "en" Or SettingsConfig("Translation").ToLower() = "english" Then
+            'Default
+        ElseIf SettingsConfig("Translation").ToLower() = "tr" Or SettingsConfig("Translation").ToLower() = "turkish" Then
+
+        Else
+            If IO.File.Exists(SettingsConfig("Translation")) Then
+                Dim MD As TranslationModel = Newtonsoft.Json.JsonConvert.DeserializeObject(Of TranslationModel)(IO.File.ReadAllText(SettingsConfig("Translation")))
+                ApplyTranslations(MD)
+            Else
+                MessageBox.Show(Me, $"Invalid translation '{SettingsConfig("Translation")}'.
+Supported Built-in Languages:
+ English
+ Turkish
+
+Extrnal translations file '{SettingsConfig("Translation")}' not found.
+
+Edit Config.ini to fix this issue.", "Translations Error")
+            End If
+        End If
+        'If IO.File.Exists("out.json") Then
+
+
+        'Else
+        '    WriteDefaultTranslations()
+        'End If
     End Sub
     Sub ld() Handles MyBase.Load
         CheckSchema()
@@ -98,9 +125,8 @@
         {cb_staffevade, "Staff Evade"},
         {cb_staffimpers, "Staff Impersonation"}}
         NoteDict = New Dictionary(Of CheckBox, String) From {
-        {cbChangeName, "Chaneg Name"},
-        {cbReadRules, "Read Rules"},
-        {cb_FalseRaid, "False Raid"}}
+        {cbChangeName, "Change Name"},
+        {cbReadRules, "Read Rules"}}
     End Sub
     Public Function GetReasons() As List(Of String)
         Dim R As New List(Of String)
@@ -126,36 +152,52 @@
         End If
         Return R
     End Function
-    Public ModifierIndex As New Dictionary(Of List(Of String), KeyValuePair(Of String, Double)) From {
-        {New List(Of String) From
-        {
-            "s", "sec", "seconds", "second"
-        }, New KeyValuePair(Of String, Double)("Second", 1)},
-        {New List(Of String) From
-        {
-            "m", "min", "minute", "minutes"
-        }, New KeyValuePair(Of String, Double)("Minute", 60)},
-        {New List(Of String) From
-        {
-            "h", "hour", "ho", "hr", "hours", "hrs", "hs"
-        }, New KeyValuePair(Of String, Double)("Hour", 60 * 60)},
-        {New List(Of String) From
-        {
-            "d", "day", "dy", "ds", "days", "dys"
-        }, New KeyValuePair(Of String, Double)("Day", 60 * 60 * 24)},
-        {New List(Of String) From
-        {
-            "w", "week", "weeks", "wks"
-        }, New KeyValuePair(Of String, Double)("Week", 60 * 60 * 24 * 7)},
-        {New List(Of String) From
-        {
-            "y", "year", "years", "yr", "yrs"
-        }, New KeyValuePair(Of String, Double)("Year", 60 * 60 * 24 * 365)},
-        {New List(Of String) From
-        {
-            "p", "pm", "perm", "inf", "forever", ""
-        }, New KeyValuePair(Of String, Double)("Perm", -1)}
+
+    Public Shared TimeModels As List(Of TimeModifier) = New List(Of TimeModifier) From {
+    New TimeModifier() With {
+    .Name = "Second",
+    .PluralName = "Seconds",
+    .Names = New List(Of String) From {"s", "sec", "seconds", "second"},
+    .Value = 1
+    },
+    New TimeModifier() With {
+    .Name = "Minute",
+    .PluralName = "Minutes",
+    .Names = New List(Of String) From {"m", "min", "minute", "minutes"},
+    .Value = 60
+    },
+    New TimeModifier() With {
+    .Name = "Hour",
+    .PluralName = "Hours",
+    .Names = New List(Of String) From {"h", "hour", "ho", "hr", "hours", "hrs", "hs"},
+    .Value = 60 * 60
+    },
+    New TimeModifier() With {
+    .Name = "Day",
+    .PluralName = "Days",
+    .Names = New List(Of String) From {"d", "day", "dy", "ds", "days", "dys"},
+    .Value = 60 * 60 * 24
+    },
+    New TimeModifier() With {
+    .Name = "Week",
+    .PluralName = "Weeks",
+    .Names = New List(Of String) From {"w", "week", "weeks", "wks"},
+    .Value = 60 * 60 * 24 * 7
+    },
+    New TimeModifier() With {
+    .Name = "Year",
+    .PluralName = "Years",
+    .Names = New List(Of String) From {"y", "year", "years", "yr", "yrs"},
+    .Value = 60 * 60 * 24 * 367
+    },
+    New TimeModifier() With {
+    .Name = "Perm",
+    .PluralName = "Perm",
+    .Names = New List(Of String) From {"p", "pm", "perm", "inf", "forever", ""},
+    .Value = -1
     }
+    }
+
     Public Function GetBanDuration() As KeyValuePair(Of Long, String)
         Dim intxt As String = txtDuration.Text.Trim(" ")
         Console.WriteLine($">>'{intxt}'<<")
@@ -173,14 +215,19 @@
 
         Dim Modifier As String = vls.Value.ToLower.Trim(" ")
         Dim Seconds As Long = -1
-        Dim mdr As KeyValuePair(Of String, Double) = New KeyValuePair(Of String, Double)("Perm", -1)
-        For Each modi In ModifierIndex
-            If modi.Key.Contains(Modifier) Then
-                mdr = modi.Value
-                If modi.Value.Key = "Perm" Then
+        'Dim mdr As KeyValuePair(Of String, Double) = New KeyValuePair(Of String, Double)("Perm", -1)
+
+        Dim MDVal As TimeModifier = TimeModels.Where(Function(x)
+                                                         Return x.Value = -1
+                                                     End Function).FirstOrDefault()
+
+        For Each modi In TimeModels
+            If modi.Names.Contains(Modifier) Then
+                MDVal = modi
+                If modi.Value = -1 Then
                     Seconds = -2
                 Else
-                    Seconds = vls.Key * modi.Value.Value
+                    Seconds = vls.Key * modi.Value
                 End If
                 Exit For
             End If
@@ -189,53 +236,55 @@
         If Seconds = -1 Or Seconds = -2 Then
             resptxt = "Perm"
         Else
-            resptxt = Math.Round(vls.Key, 1) & " " & mdr.Key & (Plurify(vls.Key))
+            resptxt = Math.Round(vls.Key, 1) & " " & QueryPlural(vls.Key, MDVal)
         End If
         Console.WriteLine("Bylen")
         Return New KeyValuePair(Of Long, String)(Seconds, resptxt)
     End Function
 
+    Private Function QueryPlural(amt As Double, Model As TimeModifier) As String
+        If amt = 1 Then
+            Console.WriteLine("Ret Name")
+            Return Model.Name
+        Else
+            Console.WriteLine("Ret Plur")
+            Return Model.PluralName
+        End If
+    End Function
+
+
     Public Function ParseFromFunct(vls As KeyValuePair(Of Double, String)) As KeyValuePair(Of Long, String)
         Console.WriteLine("funct")
         Dim dur As Double = vls.Key
         Dim nam As String = ""
-        Select Case True
-            Case dur >= 60 * 60 * 24 * 365
-                'years
-                Dim yrs As Double = Math.Round(dur / (60 * 60 * 24 * 365), 1)
-                nam = $"{yrs} Year{Plurify(yrs)}"
-            Case dur >= 60 * 60 * 24 * 7
-                'week
-                Dim yrs As Double = Math.Round(dur / (60 * 60 * 24 * 7), 1)
-                nam = $"{yrs} Week{Plurify(yrs)}"
-            Case dur >= 60 * 60 * 24
-                'day
-                Dim yrs As Double = Math.Round(dur / (60 * 60 * 24), 1)
-                nam = $"{yrs} Day{Plurify(yrs)}"
-            Case dur >= 60 * 60
-                'hour
-                Dim yrs As Double = Math.Round(dur / (60 * 60), 1)
-                nam = $"{yrs} Hour{Plurify(yrs)}"
-            Case dur >= 60
-                'min
-                Dim yrs As Double = Math.Round(dur / 60, 1)
-                nam = $"{yrs} Minute{Plurify(yrs)}"
-            Case Else
-                'sec
-                Dim yrs As Double = Math.Round(dur, 1)
-                nam = $"{yrs} Second{Plurify(yrs)}"
-        End Select
+        Dim found As Boolean = False
+        For Each Value In TimeModels.OrderByDescending(Function(x)
+                                                           Return x.Value
+                                                       End Function)
+            If Not found Then
+                If vls.Key >= Value.Value Then
+                    Dim VL As Double = Math.Round(dur / (Value.Value), 1)
+                    nam = $"{VL} {QueryPlural(VL, Value)}"
+                End If
+                found = True
+            End If
+        Next
+        If nam = "" Then
+            Dim Def As TimeModifier = TimeModels.FirstOrDefault()
+            Dim VL As Double = Math.Round(dur / (Def.Value), 1)
+            nam = $"{VL} {QueryPlural(VL, Def)}"
+        End If
         Return New KeyValuePair(Of Long, String)(dur, nam)
     End Function
 
-    Private Function Plurify(dur As Double) As String
-        Console.WriteLine($"Plur>rec::{dur}")
-        If dur > 1 Then
-            Return "s"
-        Else
-            Return ""
-        End If
-    End Function
+    'Private Function Plurify(dur As Double) As String
+    '    Console.WriteLine($"Plur>rec::{dur}")
+    '    If dur > 1 Then
+    '        Return "s"
+    '    Else
+    '        Return ""
+    '    End If
+    'End Function
     Private Function GetVals(str As String) As KeyValuePair(Of Double, String)
         str = str.Trim(" ")
         Dim reb As String = ""
@@ -268,7 +317,7 @@
         CheckTop()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnReset.Click
         Me.SuspendLayout()
         For Each db In CBDict
             db.Key.Checked = False
@@ -299,6 +348,5 @@
     End Sub
 
     Private Sub ld(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 End Class

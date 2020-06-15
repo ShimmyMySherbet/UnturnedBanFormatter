@@ -24,10 +24,10 @@ Partial Class Settings
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Settings))
         Me.txtname = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LblUsername = New System.Windows.Forms.Label()
+        Me.lblReason = New System.Windows.Forms.Label()
         Me.txtRDlim = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblNote = New System.Windows.Forms.Label()
         Me.txtNdelim = New System.Windows.Forms.TextBox()
         Me.btnSaveNClose = New System.Windows.Forms.Button()
         Me.cbOnTop = New System.Windows.Forms.CheckBox()
@@ -41,23 +41,23 @@ Partial Class Settings
         Me.txtname.Size = New System.Drawing.Size(191, 26)
         Me.txtname.TabIndex = 0
         '
-        'Label1
+        'LblUsername
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(13, 6)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(161, 20)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Username/Nickname:"
+        Me.LblUsername.AutoSize = True
+        Me.LblUsername.Location = New System.Drawing.Point(13, 6)
+        Me.LblUsername.Name = "LblUsername"
+        Me.LblUsername.Size = New System.Drawing.Size(161, 20)
+        Me.LblUsername.TabIndex = 1
+        Me.LblUsername.Text = "Username/Nickname:"
         '
-        'Label2
+        'lblReason
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(13, 62)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(135, 20)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Reason Delimiter:"
+        Me.lblReason.AutoSize = True
+        Me.lblReason.Location = New System.Drawing.Point(13, 62)
+        Me.lblReason.Name = "lblReason"
+        Me.lblReason.Size = New System.Drawing.Size(135, 20)
+        Me.lblReason.TabIndex = 3
+        Me.lblReason.Text = "Reason Delimiter:"
         '
         'txtRDlim
         '
@@ -67,14 +67,14 @@ Partial Class Settings
         Me.txtRDlim.Size = New System.Drawing.Size(191, 26)
         Me.txtRDlim.TabIndex = 2
         '
-        'Label3
+        'lblNote
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(13, 118)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(113, 20)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Note Delimiter:"
+        Me.lblNote.AutoSize = True
+        Me.lblNote.Location = New System.Drawing.Point(13, 118)
+        Me.lblNote.Name = "lblNote"
+        Me.lblNote.Size = New System.Drawing.Size(113, 20)
+        Me.lblNote.TabIndex = 5
+        Me.lblNote.Text = "Note Delimiter:"
         '
         'txtNdelim
         '
@@ -111,11 +111,11 @@ Partial Class Settings
         Me.ControlBox = False
         Me.Controls.Add(Me.cbOnTop)
         Me.Controls.Add(Me.btnSaveNClose)
-        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.lblNote)
         Me.Controls.Add(Me.txtNdelim)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.lblReason)
         Me.Controls.Add(Me.txtRDlim)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.LblUsername)
         Me.Controls.Add(Me.txtname)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
@@ -129,10 +129,10 @@ Partial Class Settings
     End Sub
 
     Friend WithEvents txtname As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents LblUsername As Label
+    Friend WithEvents lblReason As Label
     Friend WithEvents txtRDlim As TextBox
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblNote As Label
     Friend WithEvents txtNdelim As TextBox
     Friend WithEvents btnSaveNClose As Button
     Friend WithEvents cbOnTop As CheckBox

@@ -54,12 +54,12 @@ Partial Class UI
         Me.lblBanDuration = New System.Windows.Forms.Label()
         Me.txtDuration = New System.Windows.Forms.TextBox()
         Me.txtCommandOut = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblOutCMD = New System.Windows.Forms.Label()
         Me.txtOtherReason = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lblOtherReason = New System.Windows.Forms.Label()
         Me.pbCopyCmd = New System.Windows.Forms.PictureBox()
         Me.pbSett = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnReset = New System.Windows.Forms.Button()
         CType(Me.pbCopyCmd, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbSett, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -359,30 +359,30 @@ Partial Class UI
         Me.txtCommandOut.Size = New System.Drawing.Size(491, 26)
         Me.txtCommandOut.TabIndex = 30
         '
-        'Label5
+        'lblOutCMD
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(16, 382)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(86, 20)
-        Me.Label5.TabIndex = 31
-        Me.Label5.Text = "Command:"
+        Me.lblOutCMD.AutoSize = True
+        Me.lblOutCMD.Location = New System.Drawing.Point(16, 382)
+        Me.lblOutCMD.Name = "lblOutCMD"
+        Me.lblOutCMD.Size = New System.Drawing.Size(86, 20)
+        Me.lblOutCMD.TabIndex = 31
+        Me.lblOutCMD.Text = "Command:"
         '
         'txtOtherReason
         '
-        Me.txtOtherReason.Location = New System.Drawing.Point(266, 319)
+        Me.txtOtherReason.Location = New System.Drawing.Point(267, 319)
         Me.txtOtherReason.Name = "txtOtherReason"
         Me.txtOtherReason.Size = New System.Drawing.Size(240, 26)
         Me.txtOtherReason.TabIndex = 101
         '
-        'Label6
+        'lblOtherReason
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(262, 295)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(113, 20)
-        Me.Label6.TabIndex = 100
-        Me.Label6.Text = "Other Reason:"
+        Me.lblOtherReason.AutoSize = True
+        Me.lblOtherReason.Location = New System.Drawing.Point(262, 295)
+        Me.lblOtherReason.Name = "lblOtherReason"
+        Me.lblOtherReason.Size = New System.Drawing.Size(113, 20)
+        Me.lblOtherReason.TabIndex = 100
+        Me.lblOtherReason.Text = "Other Reason:"
         '
         'pbCopyCmd
         '
@@ -404,26 +404,26 @@ Partial Class UI
         Me.pbSett.TabIndex = 102
         Me.pbSett.TabStop = False
         '
-        'Button1
+        'btnReset
         '
-        Me.Button1.Location = New System.Drawing.Point(20, 437)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 24)
-        Me.Button1.TabIndex = 103
-        Me.Button1.Text = "Reset"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnReset.Location = New System.Drawing.Point(20, 437)
+        Me.btnReset.Name = "btnReset"
+        Me.btnReset.Size = New System.Drawing.Size(75, 24)
+        Me.btnReset.TabIndex = 103
+        Me.btnReset.Text = "Reset"
+        Me.btnReset.UseVisualStyleBackColor = True
         '
         'UI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(520, 473)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.pbSett)
         Me.Controls.Add(Me.txtOtherReason)
-        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.lblOtherReason)
         Me.Controls.Add(Me.pbCopyCmd)
-        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.lblOutCMD)
         Me.Controls.Add(Me.txtCommandOut)
         Me.Controls.Add(Me.txtDuration)
         Me.Controls.Add(Me.lblBanDuration)
@@ -498,10 +498,10 @@ Partial Class UI
     Friend WithEvents lblBanDuration As Label
     Friend WithEvents txtDuration As TextBox
     Friend WithEvents txtCommandOut As TextBox
-    Friend WithEvents Label5 As Label
+    Friend WithEvents lblOutCMD As Label
     Friend WithEvents pbCopyCmd As PictureBox
     Friend WithEvents txtOtherReason As TextBox
-    Friend WithEvents Label6 As Label
+    Friend WithEvents lblOtherReason As Label
     Friend WithEvents pbSett As PictureBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnReset As Button
 End Class

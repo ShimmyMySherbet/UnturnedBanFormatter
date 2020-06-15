@@ -1,0 +1,327 @@
+{
+    "WindowTitle": "Ban Manager",
+    "SettingsTitle": "Settings",
+    "MainPage": [
+        {
+            "Control": "lblOtherReason",
+            "Value": "Other Reason:"
+        },
+        {
+            "Control": "lblOutCMD",
+            "Value": "Command:"
+        },
+        {
+            "Control": "lblBanDuration",
+            "Value": "Ban Duration:"
+        },
+        {
+            "Control": "lblNotes",
+            "Value": "Notes:"
+        },
+        {
+            "Control": "lblReason",
+            "Value": "Reason:"
+        },
+        {
+            "Control": "lblPlayer",
+            "Value": "Player:"
+        },
+        {
+            "Control": "cbChangeName",
+            "Value": "Change Name"
+        },
+        {
+            "Control": "cbReadRules",
+            "Value": "Read Rules"
+        },
+        {
+            "Control": "cb_kos",
+            "Value": "KOS"
+        },
+        {
+            "Control": "cb_FalseRaid",
+            "Value": "False Raid"
+        },
+        {
+            "Control": "cb_nointent",
+            "Value": "No Intent"
+        },
+        {
+            "Control": "cb_falserp",
+            "Value": "False RP"
+        },
+        {
+            "Control": "cb_fearrp",
+            "Value": "Fear RP"
+        },
+        {
+            "Control": "cb_ignoringstaff",
+            "Value": "Ignoring Staff Instruction"
+        },
+        {
+            "Control": "cb_staffevade",
+            "Value": "Staff Evasion"
+        },
+        {
+            "Control": "cb_staffimpers",
+            "Value": "Staff Impersonation"
+        },
+        {
+            "Control": "cb_ServerCrash",
+            "Value": "Crashing Server"
+        },
+        {
+            "Control": "cb_AtemptServerCrash",
+            "Value": "Attempted Server Crash"
+        },
+        {
+            "Control": "cb_minge",
+            "Value": "Minge"
+        },
+        {
+            "Control": "cb_Greif",
+            "Value": "Greifing"
+        },
+        {
+            "Control": "cb_alt",
+            "Value": "Alt Account"
+        },
+        {
+            "Control": "cb_CheatAssisted",
+            "Value": "Cheater Assisted"
+        },
+        {
+            "Control": "cb_advert",
+            "Value": "Advertising"
+        },
+        {
+            "Control": "cb_LoadAbuse",
+            "Value": "Load Abuse"
+        },
+        {
+            "Control": "cb_racism",
+            "Value": "Racism"
+        },
+        {
+            "Control": "cb_glitch",
+            "Value": "Glitching (Other)"
+        },
+        {
+            "Control": "cb_GlitchedBase",
+            "Value": "Glitched Base"
+        },
+        {
+            "Control": "cb_StaffDis",
+            "Value": "Staff Disrespect"
+        },
+        {
+            "Control": "cb_Cheat",
+            "Value": "Hacking/Cheating"
+        },
+        {
+            "Control": "btnReset",
+            "Value": "Reset"
+        }
+    ],
+    "SettingsPage": [
+        {
+            "Control": "lblNote",
+            "Value": "Note Delimiter:"
+        },
+        {
+            "Control": "lblReason",
+            "Value": "Reason Delimiter:"
+        },
+        {
+            "Control": "LblUsername",
+            "Value": "Username/Nickname:"
+        },
+        {
+            "Control": "cbOnTop",
+            "Value": "Always On Top"
+        },
+        {
+            "Control": "btnSaveNClose",
+            "Value": "Save and Close"
+        }
+    ],
+    "TimeModels": [
+        {
+            "Names": [
+                "s",
+                "sec",
+                "seconds",
+                "second"
+            ],
+            "Name": "Second",
+            "PluralName": "Seconds",
+            "Value": 1.0
+        },
+        {
+            "Names": [
+                "m",
+                "min",
+                "minute",
+                "minutes"
+            ],
+            "Name": "Minute",
+            "PluralName": "Minutes",
+            "Value": 60.0
+        },
+        {
+            "Names": [
+                "h",
+                "hour",
+                "ho",
+                "hr",
+                "hours",
+                "hrs",
+                "hs"
+            ],
+            "Name": "Hour",
+            "PluralName": "Hours",
+            "Value": 3600.0
+        },
+        {
+            "Names": [
+                "d",
+                "day",
+                "dy",
+                "ds",
+                "days",
+                "dys"
+            ],
+            "Name": "Day",
+            "PluralName": "Days",
+            "Value": 86400.0
+        },
+        {
+            "Names": [
+                "w",
+                "week",
+                "weeks",
+                "wks"
+            ],
+            "Name": "Week",
+            "PluralName": "Weeks",
+            "Value": 604800.0
+        },
+        {
+            "Names": [
+                "y",
+                "year",
+                "years",
+                "yr",
+                "yrs"
+            ],
+            "Name": "Year",
+            "PluralName": "Years",
+            "Value": 31708800.0
+        },
+        {
+            "Names": [
+                "p",
+                "pm",
+                "perm",
+                "inf",
+                "forever",
+                ""
+            ],
+            "Name": "Perm",
+            "PluralName": "Perm",
+            "Value": -1.0
+        }
+    ],
+    "ReasonMappings": [
+        {
+            "ReasonControl": "cb_falserp",
+            "ReasonText": "False RP"
+        },
+        {
+            "ReasonControl": "cb_advert",
+            "ReasonText": "Advertising"
+        },
+        {
+            "ReasonControl": "cb_alt",
+            "ReasonText": "Alt Account"
+        },
+        {
+            "ReasonControl": "cb_AtemptServerCrash",
+            "ReasonText": "Attemped Crashing"
+        },
+        {
+            "ReasonControl": "cb_Cheat",
+            "ReasonText": "Cheating"
+        },
+        {
+            "ReasonControl": "cb_CheatAssisted",
+            "ReasonText": "Assisted By Cheater"
+        },
+        {
+            "ReasonControl": "cb_fearrp",
+            "ReasonText": "Fear RP"
+        },
+        {
+            "ReasonControl": "cb_glitch",
+            "ReasonText": "Glitching"
+        },
+        {
+            "ReasonControl": "cb_GlitchedBase",
+            "ReasonText": "Glitched Base"
+        },
+        {
+            "ReasonControl": "cb_Greif",
+            "ReasonText": "Greifing"
+        },
+        {
+            "ReasonControl": "cb_ignoringstaff",
+            "ReasonText": "Ignoring Staff Instructions"
+        },
+        {
+            "ReasonControl": "cb_kos",
+            "ReasonText": "KOS"
+        },
+        {
+            "ReasonControl": "cb_LoadAbuse",
+            "ReasonText": "Load Abuse"
+        },
+        {
+            "ReasonControl": "cb_minge",
+            "ReasonText": "Minge"
+        },
+        {
+            "ReasonControl": "cb_nointent",
+            "ReasonText": "No Intent"
+        },
+        {
+            "ReasonControl": "cb_racism",
+            "ReasonText": "Racism"
+        },
+        {
+            "ReasonControl": "cb_ServerCrash",
+            "ReasonText": "Crashing Server"
+        },
+        {
+            "ReasonControl": "cb_StaffDis",
+            "ReasonText": "Staff Dis"
+        },
+        {
+            "ReasonControl": "cb_staffevade",
+            "ReasonText": "Staff Evade"
+        },
+        {
+            "ReasonControl": "cb_staffimpers",
+            "ReasonText": "Staff Impersonation"
+        }
+    ],
+    "NoteMappings": [
+        {
+            "ReasonControl": "cbChangeName",
+            "ReasonText": "Change Name"
+        },
+        {
+            "ReasonControl": "cbReadRules",
+            "ReasonText": "Read Rules"
+        }
+    ]
+}
