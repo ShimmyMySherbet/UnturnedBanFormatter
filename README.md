@@ -21,7 +21,7 @@ This project has a built-in translations system. Currently supported languages a
 * English
 * Turkish (Comming Soon)
 
-To make translations for this project, see Translations_Default.English.json. If you translate this project, want want the translations to be added to the app, send me a message.
+To make translations for this project, see BanManager\Translations_Default.English.json. If you translate this project, want want the translations to be added to the app, send me a message.
 
 To use a translations file, set the Translations value in config.ini to the path of your json file.
 
