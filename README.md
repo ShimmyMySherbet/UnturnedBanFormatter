@@ -4,7 +4,7 @@ A simple Ban command formatter for Unturned I threw together in about an hour.
 
 This was originally developed to use on Dark Twilight Gaming, but it will work for any server.
 
-Features:
+## Features:
 * Double click input fields to paste
 * Double click the output ban command field to copy
 * Checkbox list for common ban reasons
@@ -14,6 +14,19 @@ Features:
 * Settings menu to change your represented name, reason separator, note separator, and always-on-top mode
 
 Ban Reason Format: {reasons} {notes} {Moderator Name/Nickname} {duration}
+
+## Translations:
+
+This project has a built-in translations system. Currently supported languages are:
+* English
+* Turkish (Comming Soon)
+
+To make translations for this project, see Translations_Default.English.json. If you translate this project, want want the translations to be added to the app, send me a message.
+
+To use a translations file, set the Translations value in config.ini to the path of your json file.
+
+Translations Contributors:
+* Turkish - '*LawyeR' Comming soon
 
 Downloads: See <a href="https://github.com/ShimmyMySherbet/UnturnedBanFormatter/releases/tag/1.0">Releases</a>
 
