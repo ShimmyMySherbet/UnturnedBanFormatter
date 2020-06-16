@@ -114,6 +114,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SettingsMod.vb" />
+    <Compile Include="TRanslations.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TRanslations.resx</DependentUpon>
+    </Compile>
     <Compile Include="Translations\ModifierModel.vb" />
     <Compile Include="Translations\TranslationModel.vb" />
     <Compile Include="UI.Designer.vb">
@@ -138,11 +143,17 @@
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TRanslations.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TRanslations.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI.resx">
       <DependentUpon>UI.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\Translastions_Turkish.json" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -167,6 +178,8 @@
     <None Include="Resources\settings.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Translastions_Turkish.txt" />
+    <None Include="bin\Debug\Translastions_Turkish.txt" />
     <Content Include="res.ico" />
   </ItemGroup>
   <ItemGroup />

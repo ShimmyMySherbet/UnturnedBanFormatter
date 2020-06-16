@@ -1,60 +1,56 @@
 {
-    "TranslationsName": "English",
-    "WindowTitle": "Ban Manager",
-    "SettingsTitle": "Settings",
-    "IconURL": "",
+    "TranslationsName" : "Türkçe",
+    "WindowTitle": "Yasaklama Yöneticisi",
+    "SettingsTitle": "Ayarlar",
+    "IconURL" : "https://cdn.discordapp.com/attachments/602753672266383391/722335981159579658/elite2.ico",
     "MainPage": [
         {
-            "Control": "LinkGithub",
-            "Value": "Github"
-        },
-        {
             "Control": "lblOtherReason",
-            "Value": "Other Reason:"
+            "Value": "Diğer Nedenler:"
         },
         {
             "Control": "lblOutCMD",
-            "Value": "Command:"
+            "Value": "Komut:"
         },
         {
             "Control": "lblBanDuration",
-            "Value": "Ban Duration:"
+            "Value": "Yasaklama Süresi:"
         },
         {
             "Control": "lblNotes",
-            "Value": "Notes:"
+            "Value": "Notlar:"
         },
         {
             "Control": "lblReason",
-            "Value": "Reason:"
+            "Value": "Nedenler:"
         },
         {
             "Control": "lblPlayer",
-            "Value": "Player:"
+            "Value": "Oyuncu:"
         },
         {
             "Control": "cbChangeName",
-            "Value": "Change Name"
+            "Value": "İsmini değiştir"
         },
         {
             "Control": "cbReadRules",
-            "Value": "Read Rules"
+            "Value": "Kuralları oku"
         },
         {
             "Control": "cb_kos",
-            "Value": "KOS"
+            "Value": "KOS/RDM"
         },
         {
             "Control": "cb_FalseRaid",
-            "Value": "False Raid"
+            "Value": "Hatalı Raid"
         },
         {
             "Control": "cb_nointent",
-            "Value": "No Intent"
+            "Value": "Niyetsiz Oynayış"
         },
         {
             "Control": "cb_falserp",
-            "Value": "False RP"
+            "Value": "Fail RP"
         },
         {
             "Control": "cb_fearrp",
@@ -62,23 +58,23 @@
         },
         {
             "Control": "cb_ignoringstaff",
-            "Value": "Ignoring Staff Instruction"
+            "Value": "Yetkiliyi Görmezden Gelmek"
         },
         {
             "Control": "cb_staffevade",
-            "Value": "Staff Evasion"
+            "Value": "Yetkiliden Kaçınmak"
         },
         {
             "Control": "cb_staffimpers",
-            "Value": "Staff Impersonation"
+            "Value": "Yetkiliyi Taklit Etmek"
         },
         {
             "Control": "cb_ServerCrash",
-            "Value": "Crashing Server"
+            "Value": "Sunucuyu Çökertme Girişimi"
         },
         {
             "Control": "cb_AtemptServerCrash",
-            "Value": "Attempted Server Crash"
+            "Value": "Sunucuyu Çökertme Tehdidi"
         },
         {
             "Control": "cb_minge",
@@ -90,15 +86,15 @@
         },
         {
             "Control": "cb_alt",
-            "Value": "Alt Account"
+            "Value": "Farklı Hesap Kullanımı"
         },
         {
             "Control": "cb_CheatAssisted",
-            "Value": "Cheater Assisted"
+            "Value": "Hileciye Yardım ve Yataklık"
         },
         {
             "Control": "cb_advert",
-            "Value": "Advertising"
+            "Value": "Reklam Girişimi"
         },
         {
             "Control": "cb_LoadAbuse",
@@ -106,162 +102,155 @@
         },
         {
             "Control": "cb_racism",
-            "Value": "Racism"
+            "Value": "Irkçılık"
         },
         {
             "Control": "cb_glitch",
-            "Value": "Glitching (Other)"
+            "Value": "Oyun Açığı Kullanımı"
         },
         {
             "Control": "cb_GlitchedBase",
-            "Value": "Glitched Base"
+            "Value": "Oyun Açığı Kullanarak Base Yapımı"
         },
         {
             "Control": "cb_StaffDis",
-            "Value": "Staff Disrespect"
+            "Value": "Yetkiliye Saygısızlık"
         },
         {
             "Control": "cb_Cheat",
-            "Value": "Hacking/Cheating"
+            "Value": "Hile Kullanımı"
         },
         {
             "Control": "btnReset",
-            "Value": "Reset"
+            "Value": "Fabrika Ayarlarına Dön"
         }
     ],
     "SettingsPage": [
         {
             "Control": "lblNote",
-            "Value": "Note Delimiter:"
+            "Value": "Not Sınırlayıcısı:"
         },
         {
             "Control": "lblReason",
-            "Value": "Reason Delimiter:"
+            "Value": "Neden Sınırlayıcısı:"
         },
         {
             "Control": "LblUsername",
-            "Value": "Username/Nickname:"
+            "Value": "Kullanıcı Adı:"
         },
         {
             "Control": "cbOnTop",
-            "Value": "Always On Top"
+            "Value": "Her Zaman Üstte"
         },
         {
             "Control": "btnSaveNClose",
-            "Value": "Save and Close"
+            "Value": "Kaydet ve Kapat"
         }
     ],
     "TimeModels": [
         {
             "Names": [
                 "s",
-                "sec",
-                "seconds",
-                "second"
+                "san",
+                "sny",
+                "saniye"
             ],
-            "Name": "Second",
-            "PluralName": "Seconds",
+            "Name": "Saniye",
+            "PluralName": "Saniye",
             "Value": 1.0
         },
         {
             "Names": [
-                "m",
-                "min",
-                "minute",
-                "minutes"
+                "d",
+                "dk",
+                "dak",
+                "dakika"
             ],
-            "Name": "Minute",
-            "PluralName": "Minutes",
+            "Name": "Dakika",
+            "PluralName": "Dakika",
             "Value": 60.0
         },
         {
             "Names": [
-                "h",
-                "hour",
-                "ho",
-                "hr",
-                "hours",
-                "hrs",
-                "hs"
+                "s",
+                "saat",
+                "sa",
+                "saa",
+                "st",
+                "sat"
             ],
-            "Name": "Hour",
-            "PluralName": "Hours",
+            "Name": "Saat",
+            "PluralName": "Saat",
             "Value": 3600.0
         },
         {
             "Names": [
-                "d",
-                "day",
-                "dy",
-                "ds",
-                "days",
-                "dys"
+                "g",
+                "gün",
+                "gn"
             ],
-            "Name": "Day",
-            "PluralName": "Days",
+            "Name": "Gün",
+            "PluralName": "Gün",
             "Value": 86400.0
         },
         {
             "Names": [
-                "w",
-                "week",
-                "weeks",
-                "wks"
+                "h",
+                "hafta",
+                "hft",
+                "haft"
             ],
-            "Name": "Week",
-            "PluralName": "Weeks",
+            "Name": "Hafta",
+            "PluralName": "Hafta",
             "Value": 604800.0
         },
         {
             "Names": [
                 "y",
-                "year",
-                "years",
-                "yr",
-                "yrs"
+                "yıl",
+                "yl"
             ],
-            "Name": "Year",
-            "PluralName": "Years",
+            "Name": "Yıl",
+            "PluralName": "Yıl",
             "Value": 31708800.0
         },
         {
             "Names": [
-                "p",
+                "perma",
                 "pm",
+                "per",
                 "perm",
-                "inf",
-                "forever",
                 ""
             ],
-            "Name": "Perm",
-            "PluralName": "Perm",
+            "Name": "Sï¿½nï¿½rsï¿½z",
+            "PluralName": "Sï¿½nï¿½rsï¿½z(Permanent)",
             "Value": -1.0
         }
     ],
     "ReasonMappings": [
         {
             "ReasonControl": "cb_falserp",
-            "ReasonText": "False RP"
+            "ReasonText": "Fail RP"
         },
         {
             "ReasonControl": "cb_advert",
-            "ReasonText": "Advertising"
+            "ReasonText": "Reklam Girişimi"
         },
         {
             "ReasonControl": "cb_alt",
-            "ReasonText": "Alt Account"
+            "ReasonText": "Farklı Hesap Kullanımı"
         },
         {
             "ReasonControl": "cb_AtemptServerCrash",
-            "ReasonText": "Attemped Crashing"
+            "ReasonText": "Sunucuyu Çökertme Tehdidi"
         },
         {
             "ReasonControl": "cb_Cheat",
-            "ReasonText": "Cheating"
+            "ReasonText": "Hile Kullanımı"
         },
         {
             "ReasonControl": "cb_CheatAssisted",
-            "ReasonText": "Assisted By Cheater"
+            "ReasonText": "Hileciye Yardım ve Yataklık"
         },
         {
             "ReasonControl": "cb_fearrp",
@@ -269,11 +258,11 @@
         },
         {
             "ReasonControl": "cb_glitch",
-            "ReasonText": "Glitching"
+            "ReasonText": "Oyun Açığı Kullanımı"
         },
         {
             "ReasonControl": "cb_GlitchedBase",
-            "ReasonText": "Glitched Base"
+            "ReasonText": "Oyun Açığı Kullanarak Base Yapımı"
         },
         {
             "ReasonControl": "cb_Greif",
@@ -281,11 +270,11 @@
         },
         {
             "ReasonControl": "cb_ignoringstaff",
-            "ReasonText": "Ignoring Staff Instructions"
+            "ReasonText": "Yetkilinin Talimatlarını Reddetmek"
         },
         {
             "ReasonControl": "cb_kos",
-            "ReasonText": "KOS"
+            "ReasonText": "KOS/RDM"
         },
         {
             "ReasonControl": "cb_LoadAbuse",
@@ -297,37 +286,37 @@
         },
         {
             "ReasonControl": "cb_nointent",
-            "ReasonText": "No Intent"
+            "ReasonText": "Niyetsiz Oynayış"
         },
         {
             "ReasonControl": "cb_racism",
-            "ReasonText": "Racism"
+            "ReasonText": "Irkçılık"
         },
         {
             "ReasonControl": "cb_ServerCrash",
-            "ReasonText": "Crashing Server"
+            "ReasonText": "Sunucuyu Çökerme Girişimi"
         },
         {
             "ReasonControl": "cb_StaffDis",
-            "ReasonText": "Staff Dis"
+            "ReasonText": "Yetkiliye Saygısızlık"
         },
         {
             "ReasonControl": "cb_staffevade",
-            "ReasonText": "Staff Evade"
+            "ReasonText": "Yetkiliden Kaçınmak"
         },
         {
             "ReasonControl": "cb_staffimpers",
-            "ReasonText": "Staff Impersonation"
+            "ReasonText": "Yetkiliyi Taklit Etmek"
         }
     ],
     "NoteMappings": [
         {
             "ReasonControl": "cbChangeName",
-            "ReasonText": "Change Name"
+            "ReasonText": "İsmini Değiştir"
         },
         {
             "ReasonControl": "cbReadRules",
-            "ReasonText": "Read Rules"
+            "ReasonText": "Kuralları Oku"
         }
     ]
 }

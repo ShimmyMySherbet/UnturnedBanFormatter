@@ -1,4 +1,6 @@
-﻿Public Class UI
+﻿Imports System.IO
+
+Public Class UI
     Public Shared CBDict As New Dictionary(Of CheckBox, String)
     Public Shared NoteDict As New Dictionary(Of CheckBox, String)
 
@@ -48,19 +50,74 @@
         End If
         txtCommandOut.Text = cmd
     End Sub
+
     Sub shn() Handles MyBase.Shown
         LoadDicts()
         HookHandlers()
-
-
+        CheckForIllegalCrossThreadCalls = False
         If SettingsConfig("Translation").ToLower() = "en" Or SettingsConfig("Translation").ToLower() = "english" Then
             'Default
         ElseIf SettingsConfig("Translation").ToLower() = "tr" Or SettingsConfig("Translation").ToLower() = "turkish" Then
+            Dim Model As TranslationModel = Newtonsoft.Json.JsonConvert.DeserializeObject(Of TranslationModel)(My.Resources.TRanslations.Translastions_Turkish)
+            ApplyTranslations(Model)
+            If Not String.IsNullOrEmpty(Model.IconURL) Then
+                Dim RD As New Threading.Thread(Sub()
+                                                   Try
 
+                                                       Dim IconD As String = IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BanManager")
+                                                       If Not Directory.Exists(IconD) Then
+                                                           Directory.CreateDirectory(IconD)
+                                                       End If
+                                                       If Not File.Exists(Path.Combine(IconD, $"icon_{Model.TranslationsName}")) Then
+                                                           Dim Req As Net.HttpWebRequest = Net.WebRequest.CreateHttp(Model.IconURL)
+                                                           Req.Method = "GET"
+                                                           Console.WriteLine("DL")
+                                                           Dim st As New IO.MemoryStream()
+                                                           Req.GetResponse().GetResponseStream().CopyTo(st)
+                                                           File.WriteAllBytes(Path.Combine(IconD, $"icon_{Model.TranslationsName}"), st.ToArray())
+                                                       End If
+                                                       Dim IC As New Icon(Path.Combine(IconD, $"icon_{Model.TranslationsName}"))
+                                                       Console.WriteLine("Done")
+                                                       Me.Icon = IC
+                                                       Console.WriteLine("Icon Set")
+                                                   Catch ex As Exception
+                                                       Console.WriteLine(ex.Message)
+                                                   End Try
+
+                                               End Sub)
+                RD.Start()
+            End If
         Else
             If IO.File.Exists(SettingsConfig("Translation")) Then
-                Dim MD As TranslationModel = Newtonsoft.Json.JsonConvert.DeserializeObject(Of TranslationModel)(IO.File.ReadAllText(SettingsConfig("Translation")))
-                ApplyTranslations(MD)
+                Dim Model As TranslationModel = Newtonsoft.Json.JsonConvert.DeserializeObject(Of TranslationModel)(IO.File.ReadAllText(SettingsConfig("Translation")))
+                ApplyTranslations(Model)
+                If Not String.IsNullOrEmpty(Model.IconURL) Then
+                    Dim RD As New Threading.Thread(Sub()
+                                                       Try
+
+                                                           Dim IconD As String = IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BanManager")
+                                                           If Not Directory.Exists(IconD) Then
+                                                               Directory.CreateDirectory(IconD)
+                                                           End If
+                                                           If Not File.Exists(Path.Combine(IconD, $"icon_{Model.TranslationsName}")) Then
+                                                               Dim Req As Net.HttpWebRequest = Net.WebRequest.CreateHttp(Model.IconURL)
+                                                               Req.Method = "GET"
+                                                               Console.WriteLine("DL")
+                                                               Dim st As New IO.MemoryStream()
+                                                               Req.GetResponse().GetResponseStream().CopyTo(st)
+                                                               File.WriteAllBytes(Path.Combine(IconD, $"icon_{Model.TranslationsName}"), st.ToArray())
+                                                           End If
+                                                           Dim IC As New Icon(Path.Combine(IconD, $"icon_{Model.TranslationsName}"))
+                                                           Console.WriteLine("Done")
+                                                           Me.Icon = IC
+                                                           Console.WriteLine("Icon Set")
+                                                       Catch ex As Exception
+                                                           Console.WriteLine(ex.Message)
+                                                       End Try
+
+                                                   End Sub)
+                    RD.Start()
+                End If
             Else
                 MessageBox.Show(Me, $"Invalid translation '{SettingsConfig("Translation")}'.
 Supported Built-in Languages:
@@ -70,19 +127,21 @@ Supported Built-in Languages:
 Extrnal translations file '{SettingsConfig("Translation")}' not found.
 
 Edit Config.ini to fix this issue.", "Translations Error")
+
             End If
         End If
         'If IO.File.Exists("out.json") Then
-
 
         'Else
         '    WriteDefaultTranslations()
         'End If
     End Sub
+
     Sub ld() Handles MyBase.Load
         CheckSchema()
         CheckTop()
     End Sub
+
     Public Shared Sub CheckTop()
         If SettingsConfig("OnTop") Then
             UI.TopMost = True
@@ -91,6 +150,7 @@ Edit Config.ini to fix this issue.", "Translations Error")
             UI.TopMost = False
         End If
     End Sub
+
     Sub HookHandlers()
         For Each et In CBDict
             AddHandler et.Key.CheckedChanged, AddressOf RunUpdate
@@ -99,9 +159,11 @@ Edit Config.ini to fix this issue.", "Translations Error")
             AddHandler et.Key.CheckedChanged, AddressOf RunUpdate
         Next
     End Sub
+
     Sub RunUpdate() Handles txtDuration.TextChanged, txtNotes.TextChanged, txtOtherReason.TextChanged, txtPlayer.TextChanged
         UpdateCommand()
     End Sub
+
     Sub LoadDicts()
         CBDict = New Dictionary(Of CheckBox, String) From {
         {cb_falserp, "False RP"},
@@ -128,6 +190,7 @@ Edit Config.ini to fix this issue.", "Translations Error")
         {cbChangeName, "Change Name"},
         {cbReadRules, "Read Rules"}}
     End Sub
+
     Public Function GetReasons() As List(Of String)
         Dim R As New List(Of String)
         For Each R_ In CBDict
@@ -140,6 +203,7 @@ Edit Config.ini to fix this issue.", "Translations Error")
         End If
         Return R
     End Function
+
     Public Function GetNotes() As List(Of String)
         Dim R As New List(Of String)
         For Each R_ In NoteDict
@@ -203,7 +267,6 @@ Edit Config.ini to fix this issue.", "Translations Error")
         Console.WriteLine($">>'{intxt}'<<")
         Dim vls = GetVals(intxt)
 
-
         If Not intxt = "" Then
             Console.WriteLine("MD")
             If IsNumeric(intxt) And Not String.IsNullOrEmpty(intxt) Then
@@ -211,7 +274,6 @@ Edit Config.ini to fix this issue.", "Translations Error")
                 Exit Function
             End If
         End If
-
 
         Dim Modifier As String = vls.Value.ToLower.Trim(" ")
         Dim Seconds As Long = -1
@@ -251,7 +313,6 @@ Edit Config.ini to fix this issue.", "Translations Error")
             Return Model.PluralName
         End If
     End Function
-
 
     Public Function ParseFromFunct(vls As KeyValuePair(Of Double, String)) As KeyValuePair(Of Long, String)
         Console.WriteLine("funct")
@@ -336,6 +397,7 @@ Edit Config.ini to fix this issue.", "Translations Error")
     Private Sub pbCopyCmd_Click() Handles pbCopyCmd.Click, txtCommandOut.DoubleClick
         My.Computer.Clipboard.SetText(txtCommandOut.Text)
     End Sub
+
     Private Sub handlerc(sender As Object, e As EventArgs) Handles txtPlayer.DoubleClick, txtDuration.DoubleClick, txtNotes.DoubleClick, txtOtherReason.DoubleClick
         Try
             If TypeOf sender Is TextBox Then
@@ -348,5 +410,11 @@ Edit Config.ini to fix this issue.", "Translations Error")
     End Sub
 
     Private Sub ld(sender As Object, e As EventArgs) Handles MyBase.Load
+        Threading.Thread.CurrentThread.CurrentCulture = New Globalization.CultureInfo("tr-TR")
+        Threading.Thread.CurrentThread.CurrentUICulture = New Globalization.CultureInfo("tr-TR")
+    End Sub
+
+    Private Sub LinkGithub_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkGithub.LinkClicked
+        Process.Start("https://github.com/ShimmyMySherbet/UnturnedBanFormatter")
     End Sub
 End Class

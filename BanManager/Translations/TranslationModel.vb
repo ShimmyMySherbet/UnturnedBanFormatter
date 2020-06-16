@@ -1,6 +1,9 @@
-﻿Public Class TranslationModel
+﻿Imports System.IO
+Public Class TranslationModel
+    Public TranslationsName As String = "English"
     Public WindowTitle As String = "Ban Manager"
     Public SettingsTitle As String = "Settings"
+    Public IconURL As String = ""
     Public MainPage As New List(Of TranslationMapping)
     Public SettingsPage As New List(Of TranslationMapping)
     Public TimeModels As List(Of TimeModifier)
@@ -134,6 +137,37 @@ Public Module TranslationsModel
                 End If
             Next
         Next
+
+
+
+        'If Not String.IsNullOrEmpty(Model.IconURL) Then
+        '    Dim RD As New Threading.Thread(Sub()
+        '                                       Try
+
+        '                                           Dim IconD As String = IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BanManager")
+        '                                           If Not Directory.Exists(IconD) Then
+        '                                               Directory.CreateDirectory(IconD)
+        '                                           End If
+        '                                           If Not File.Exists(Path.Combine(IconD, $"icon_{Model.TranslationsName}")) Then
+        '                                               Dim Req As Net.HttpWebRequest = Net.WebRequest.CreateHttp(Model.IconURL)
+        '                                               Req.Method = "GET"
+        '                                               Console.WriteLine("DL")
+        '                                               Dim st As New IO.MemoryStream()
+        '                                               Req.GetResponse().GetResponseStream().CopyTo(st)
+        '                                               File.WriteAllBytes(Path.Combine(IconD, $"icon_{Model.TranslationsName}"), st.ToArray())
+        '                                           End If
+        '                                           Dim IC As New Icon(Path.Combine(IconD, $"icon_{Model.TranslationsName}"))
+        '                                           Console.WriteLine("Done")
+        '                                           UI.Icon = IC
+        '                                           Console.WriteLine("Icon Set")
+        '                                       Catch ex As Exception
+        '                                           Console.WriteLine(ex.Message)
+        '                                       End Try
+
+        '                                   End Sub)
+        '    RD.Start()
+        'End If
+
 
     End Sub
 

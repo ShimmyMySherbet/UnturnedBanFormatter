@@ -60,6 +60,7 @@ Partial Class UI
         Me.pbCopyCmd = New System.Windows.Forms.PictureBox()
         Me.pbSett = New System.Windows.Forms.PictureBox()
         Me.btnReset = New System.Windows.Forms.Button()
+        Me.LinkGithub = New System.Windows.Forms.LinkLabel()
         CType(Me.pbCopyCmd, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbSett, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -133,7 +134,7 @@ Partial Class UI
         'cb_racism
         '
         Me.cb_racism.AutoSize = True
-        Me.cb_racism.Location = New System.Drawing.Point(176, 174)
+        Me.cb_racism.Location = New System.Drawing.Point(195, 174)
         Me.cb_racism.Name = "cb_racism"
         Me.cb_racism.Size = New System.Drawing.Size(81, 24)
         Me.cb_racism.TabIndex = 7
@@ -143,7 +144,7 @@ Partial Class UI
         'cb_LoadAbuse
         '
         Me.cb_LoadAbuse.AutoSize = True
-        Me.cb_LoadAbuse.Location = New System.Drawing.Point(176, 114)
+        Me.cb_LoadAbuse.Location = New System.Drawing.Point(195, 114)
         Me.cb_LoadAbuse.Name = "cb_LoadAbuse"
         Me.cb_LoadAbuse.Size = New System.Drawing.Size(114, 24)
         Me.cb_LoadAbuse.TabIndex = 8
@@ -153,7 +154,7 @@ Partial Class UI
         'cb_advert
         '
         Me.cb_advert.AutoSize = True
-        Me.cb_advert.Location = New System.Drawing.Point(176, 144)
+        Me.cb_advert.Location = New System.Drawing.Point(195, 144)
         Me.cb_advert.Name = "cb_advert"
         Me.cb_advert.Size = New System.Drawing.Size(106, 24)
         Me.cb_advert.TabIndex = 9
@@ -163,7 +164,7 @@ Partial Class UI
         'cb_CheatAssisted
         '
         Me.cb_CheatAssisted.AutoSize = True
-        Me.cb_CheatAssisted.Location = New System.Drawing.Point(308, 84)
+        Me.cb_CheatAssisted.Location = New System.Drawing.Point(334, 84)
         Me.cb_CheatAssisted.Name = "cb_CheatAssisted"
         Me.cb_CheatAssisted.Size = New System.Drawing.Size(150, 24)
         Me.cb_CheatAssisted.TabIndex = 10
@@ -183,7 +184,7 @@ Partial Class UI
         'cb_Greif
         '
         Me.cb_Greif.AutoSize = True
-        Me.cb_Greif.Location = New System.Drawing.Point(176, 84)
+        Me.cb_Greif.Location = New System.Drawing.Point(195, 84)
         Me.cb_Greif.Name = "cb_Greif"
         Me.cb_Greif.Size = New System.Drawing.Size(84, 24)
         Me.cb_Greif.TabIndex = 99
@@ -193,7 +194,7 @@ Partial Class UI
         'cb_minge
         '
         Me.cb_minge.AutoSize = True
-        Me.cb_minge.Location = New System.Drawing.Point(176, 204)
+        Me.cb_minge.Location = New System.Drawing.Point(195, 204)
         Me.cb_minge.Name = "cb_minge"
         Me.cb_minge.Size = New System.Drawing.Size(71, 24)
         Me.cb_minge.TabIndex = 13
@@ -203,7 +204,7 @@ Partial Class UI
         'cb_AtemptServerCrash
         '
         Me.cb_AtemptServerCrash.AutoSize = True
-        Me.cb_AtemptServerCrash.Location = New System.Drawing.Point(308, 114)
+        Me.cb_AtemptServerCrash.Location = New System.Drawing.Point(334, 114)
         Me.cb_AtemptServerCrash.Name = "cb_AtemptServerCrash"
         Me.cb_AtemptServerCrash.Size = New System.Drawing.Size(199, 24)
         Me.cb_AtemptServerCrash.TabIndex = 14
@@ -213,7 +214,7 @@ Partial Class UI
         'cb_ServerCrash
         '
         Me.cb_ServerCrash.AutoSize = True
-        Me.cb_ServerCrash.Location = New System.Drawing.Point(308, 144)
+        Me.cb_ServerCrash.Location = New System.Drawing.Point(334, 144)
         Me.cb_ServerCrash.Name = "cb_ServerCrash"
         Me.cb_ServerCrash.Size = New System.Drawing.Size(141, 24)
         Me.cb_ServerCrash.TabIndex = 15
@@ -223,7 +224,7 @@ Partial Class UI
         'cb_staffimpers
         '
         Me.cb_staffimpers.AutoSize = True
-        Me.cb_staffimpers.Location = New System.Drawing.Point(308, 174)
+        Me.cb_staffimpers.Location = New System.Drawing.Point(334, 174)
         Me.cb_staffimpers.Name = "cb_staffimpers"
         Me.cb_staffimpers.Size = New System.Drawing.Size(169, 24)
         Me.cb_staffimpers.TabIndex = 16
@@ -243,7 +244,7 @@ Partial Class UI
         'cb_ignoringstaff
         '
         Me.cb_ignoringstaff.AutoSize = True
-        Me.cb_ignoringstaff.Location = New System.Drawing.Point(308, 204)
+        Me.cb_ignoringstaff.Location = New System.Drawing.Point(334, 204)
         Me.cb_ignoringstaff.Name = "cb_ignoringstaff"
         Me.cb_ignoringstaff.Size = New System.Drawing.Size(204, 24)
         Me.cb_ignoringstaff.TabIndex = 18
@@ -253,7 +254,7 @@ Partial Class UI
         'cb_fearrp
         '
         Me.cb_fearrp.AutoSize = True
-        Me.cb_fearrp.Location = New System.Drawing.Point(176, 234)
+        Me.cb_fearrp.Location = New System.Drawing.Point(195, 234)
         Me.cb_fearrp.Name = "cb_fearrp"
         Me.cb_fearrp.Size = New System.Drawing.Size(87, 24)
         Me.cb_fearrp.TabIndex = 19
@@ -263,7 +264,7 @@ Partial Class UI
         'cb_falserp
         '
         Me.cb_falserp.AutoSize = True
-        Me.cb_falserp.Location = New System.Drawing.Point(308, 234)
+        Me.cb_falserp.Location = New System.Drawing.Point(334, 234)
         Me.cb_falserp.Name = "cb_falserp"
         Me.cb_falserp.Size = New System.Drawing.Size(93, 24)
         Me.cb_falserp.TabIndex = 20
@@ -283,7 +284,7 @@ Partial Class UI
         'cb_FalseRaid
         '
         Me.cb_FalseRaid.AutoSize = True
-        Me.cb_FalseRaid.Location = New System.Drawing.Point(176, 264)
+        Me.cb_FalseRaid.Location = New System.Drawing.Point(195, 264)
         Me.cb_FalseRaid.Name = "cb_FalseRaid"
         Me.cb_FalseRaid.Size = New System.Drawing.Size(104, 24)
         Me.cb_FalseRaid.TabIndex = 22
@@ -293,7 +294,7 @@ Partial Class UI
         'cb_kos
         '
         Me.cb_kos.AutoSize = True
-        Me.cb_kos.Location = New System.Drawing.Point(308, 265)
+        Me.cb_kos.Location = New System.Drawing.Point(334, 265)
         Me.cb_kos.Name = "cb_kos"
         Me.cb_kos.Size = New System.Drawing.Size(61, 24)
         Me.cb_kos.TabIndex = 23
@@ -329,7 +330,7 @@ Partial Class UI
         'cbChangeName
         '
         Me.cbChangeName.AutoSize = True
-        Me.cbChangeName.Location = New System.Drawing.Point(129, 351)
+        Me.cbChangeName.Location = New System.Drawing.Point(132, 351)
         Me.cbChangeName.Name = "cbChangeName"
         Me.cbChangeName.Size = New System.Drawing.Size(130, 24)
         Me.cbChangeName.TabIndex = 27
@@ -339,7 +340,7 @@ Partial Class UI
         'lblBanDuration
         '
         Me.lblBanDuration.AutoSize = True
-        Me.lblBanDuration.Location = New System.Drawing.Point(304, 6)
+        Me.lblBanDuration.Location = New System.Drawing.Point(330, 6)
         Me.lblBanDuration.Name = "lblBanDuration"
         Me.lblBanDuration.Size = New System.Drawing.Size(107, 20)
         Me.lblBanDuration.TabIndex = 28
@@ -347,16 +348,16 @@ Partial Class UI
         '
         'txtDuration
         '
-        Me.txtDuration.Location = New System.Drawing.Point(308, 30)
+        Me.txtDuration.Location = New System.Drawing.Point(334, 30)
         Me.txtDuration.Name = "txtDuration"
-        Me.txtDuration.Size = New System.Drawing.Size(115, 26)
+        Me.txtDuration.Size = New System.Drawing.Size(172, 26)
         Me.txtDuration.TabIndex = 1
         '
         'txtCommandOut
         '
         Me.txtCommandOut.Location = New System.Drawing.Point(16, 405)
         Me.txtCommandOut.Name = "txtCommandOut"
-        Me.txtCommandOut.Size = New System.Drawing.Size(491, 26)
+        Me.txtCommandOut.Size = New System.Drawing.Size(528, 26)
         Me.txtCommandOut.TabIndex = 30
         '
         'lblOutCMD
@@ -370,15 +371,15 @@ Partial Class UI
         '
         'txtOtherReason
         '
-        Me.txtOtherReason.Location = New System.Drawing.Point(267, 319)
+        Me.txtOtherReason.Location = New System.Drawing.Point(280, 319)
         Me.txtOtherReason.Name = "txtOtherReason"
-        Me.txtOtherReason.Size = New System.Drawing.Size(240, 26)
+        Me.txtOtherReason.Size = New System.Drawing.Size(264, 26)
         Me.txtOtherReason.TabIndex = 101
         '
         'lblOtherReason
         '
         Me.lblOtherReason.AutoSize = True
-        Me.lblOtherReason.Location = New System.Drawing.Point(262, 295)
+        Me.lblOtherReason.Location = New System.Drawing.Point(288, 295)
         Me.lblOtherReason.Name = "lblOtherReason"
         Me.lblOtherReason.Size = New System.Drawing.Size(113, 20)
         Me.lblOtherReason.TabIndex = 100
@@ -387,7 +388,7 @@ Partial Class UI
         'pbCopyCmd
         '
         Me.pbCopyCmd.Image = Global.BanManager.My.Resources.Icons.paste
-        Me.pbCopyCmd.Location = New System.Drawing.Point(485, 407)
+        Me.pbCopyCmd.Location = New System.Drawing.Point(523, 406)
         Me.pbCopyCmd.Name = "pbCopyCmd"
         Me.pbCopyCmd.Size = New System.Drawing.Size(21, 23)
         Me.pbCopyCmd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -397,7 +398,7 @@ Partial Class UI
         'pbSett
         '
         Me.pbSett.Image = Global.BanManager.My.Resources.Icons.settings
-        Me.pbSett.Location = New System.Drawing.Point(485, 6)
+        Me.pbSett.Location = New System.Drawing.Point(529, 6)
         Me.pbSett.Name = "pbSett"
         Me.pbSett.Size = New System.Drawing.Size(27, 23)
         Me.pbSett.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -413,11 +414,23 @@ Partial Class UI
         Me.btnReset.Text = "Reset"
         Me.btnReset.UseVisualStyleBackColor = True
         '
+        'LinkGithub
+        '
+        Me.LinkGithub.AutoSize = True
+        Me.LinkGithub.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkGithub.Location = New System.Drawing.Point(501, 442)
+        Me.LinkGithub.Name = "LinkGithub"
+        Me.LinkGithub.Size = New System.Drawing.Size(43, 15)
+        Me.LinkGithub.TabIndex = 104
+        Me.LinkGithub.TabStop = True
+        Me.LinkGithub.Text = "Github"
+        '
         'UI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(520, 473)
+        Me.ClientSize = New System.Drawing.Size(568, 473)
+        Me.Controls.Add(Me.LinkGithub)
         Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.pbSett)
         Me.Controls.Add(Me.txtOtherReason)
@@ -459,7 +472,7 @@ Partial Class UI
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "UI"
-        Me.Text = "UI"
+        Me.Text = "Ban Manager"
         CType(Me.pbCopyCmd, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbSett, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -504,4 +517,5 @@ Partial Class UI
     Friend WithEvents lblOtherReason As Label
     Friend WithEvents pbSett As PictureBox
     Friend WithEvents btnReset As Button
+    Friend WithEvents LinkGithub As LinkLabel
 End Class
