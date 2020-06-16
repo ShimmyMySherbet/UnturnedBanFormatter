@@ -19,14 +19,14 @@ Ban Reason Format: {reasons} {notes} {Moderator Name/Nickname} {duration}
 
 This project has a built-in translations system. Currently supported languages are:
 * English
-* Turkish (Comming Soon)
+* Turkish
 
 To make translations for this project, see BanManager\Translations_Default.English.json. If you translate this project, want want the translations to be added to the app, send me a message.
 
 To use a translations file, set the Translations value in config.ini to the path of your json file.
 
 Translations Contributors:
-* Turkish - '*LawyeR' Comming soon
+* Turkish - '*LawyeR'
 
 Downloads: See <a href="https://github.com/ShimmyMySherbet/UnturnedBanFormatter/releases/tag/1.0">Releases</a>
 
